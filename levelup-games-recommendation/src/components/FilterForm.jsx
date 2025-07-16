@@ -190,7 +190,7 @@ const FilterForm = ({ onGameSelected, setLoading }) => {
 
         {showPlatformDropdown && (
           <div className="platform-dropdown-content">
-            {['todas', 'pc', 'browser'].map((p) => (
+            {platforms.map((p) => (
               <div
                 key={p}
                 className="platform-option"
