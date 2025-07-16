@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://www.freetogame.com/api',
+  baseURL: 'http://localhost:4000',
 });
 
 export default api;
