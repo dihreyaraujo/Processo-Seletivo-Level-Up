@@ -18,6 +18,8 @@ const FilterForm = ({ onGameSelected, setLoading }) => {
   const [platform, setPlatform] = useState('todas');
   const [ram, setRam] = useState('');
   const [showGenreDropdown, setShowGenreDropdown] = useState(false);
+  const [showPlatformDropdown, setShowPlatformDropdown] = useState(false);
+
 
   const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
@@ -176,16 +178,34 @@ const FilterForm = ({ onGameSelected, setLoading }) => {
 
       </div>
 
-      <div>
+      <div className="platform-dropdown">
         <label>🖥 Plataforma:</label>
-        <select onChange={(e) => setPlatform(e.target.value)} value={platform}>
-          {platforms.map((p) => (
-            <option key={p} value={p}>
-              {p === 'todas' ? 'Todas' : p.toUpperCase()}
-            </option>
-          ))}
-        </select>
+        <div
+          className="platform-select"
+          onClick={() => setShowPlatformDropdown((prev) => !prev)}
+        >
+          {platform === 'todas' ? 'Todas' : platform.toUpperCase()}
+          <span className="arrow">▼</span>
+        </div>
+
+        {showPlatformDropdown && (
+          <div className="platform-dropdown-content">
+            {['todas', 'pc', 'browser'].map((p) => (
+              <div
+                key={p}
+                className="platform-option"
+                onClick={() => {
+                  setPlatform(p);
+                  setShowPlatformDropdown(false);
+                }}
+              >
+                {p === 'todas' ? 'Todas' : p.toUpperCase()}
+              </div>
+            ))}
+          </div>
+        )}
       </div>
+
 
       <div>
         <label>💾 RAM (GB): <span style={{ color: '#ff4d4d' }}>*</span></label>
