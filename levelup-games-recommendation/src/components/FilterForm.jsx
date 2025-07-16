@@ -66,14 +66,14 @@ const FilterForm = ({ onGameSelected, setLoading }) => {
           const res = await api.get(`/game?id=${game.id}`);
           const gameDetails = res.data;
 
-          if (!ram) {
+          if (platform === 'browser') {
             validGame = gameDetails;
             break;
           }
 
           const ramMemoryInfo = gameDetails.minimum_system_requirements?.memory;
 
-          if (!ramMemoryInfo) {
+          if (!ramMemoryInfo && platform !== 'browser') {
             continue;
           }
 
