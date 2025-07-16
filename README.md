@@ -1,6 +1,8 @@
 
 # 🎮 Free-to-Play Game Recommender
 
+⚠️Como um diferencial eu fiz o deploy completo da aplicação na Vercel, então caso você queira já testar diretamente no navegador sem passar pelos passos de rodar localmente basta acessar [este link](https://processo-seletivo-level-up.vercel.app/).
+
 Projeto completo com frontend em React e backend proxy em Node.js (por conta da API oficial que não permite chamadas diretas com o front, dando o erro de CORS) que recomenda jogos gratuitos com base nas preferências do usuário utilizando a [FreeToGame API](https://www.freetogame.com/api-doc).
 
 ---
@@ -65,7 +67,7 @@ cd levelup-games-recommendation
 ```bash
 cd proxy-backend
 npm install
-node proxy-server.js
+npm start
 ```
 
 O servidor estará disponível em: `http://localhost:4000` ou na porta que você definir no .env (deixei um .env.example para que você possa excluir o .example e ter o arquivo para manipulação)
