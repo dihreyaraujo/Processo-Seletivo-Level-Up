@@ -7,6 +7,8 @@ const App = () => {
   const [loading, setLoading] = useState(false);
   const [notFound, setNotFound] = useState(false);
 
+  console.log(process.env.REACT_APP_BACKEND_URL);
+
   return (
     <div className="container">
       <h1>🎮 Encontre um Jogo Ideal</h1>

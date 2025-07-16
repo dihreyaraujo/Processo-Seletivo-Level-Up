@@ -1,6 +1,9 @@
 const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 const app = express();
 app.use(cors());
@@ -24,6 +27,8 @@ app.get('/game', async (req, res) => {
   }
 });
 
-app.listen(4000, () => {
-  console.log('Proxy rodando em http://localhost:4000');
+const PORT = process.env.PORT || 4000;
+
+app.listen(PORT, () => {
+  console.log(`Proxy rodando em http://localhost:${PORT}`);
 });
