@@ -128,7 +128,7 @@ const FilterForm = ({ onGameSelected, setLoading }) => {
               if (isMobile) {
                 setShowGenreDropdown(true);
               } else {
-                setShowGenreDropdown((prev) => !prev); // toggle no desktop
+                setShowGenreDropdown((prev) => !prev);
               }
             }}
           >
